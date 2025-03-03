@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Layer */
+@layer base {
+  :root {
+    /* Custom Properties */
+    --background: 0 0% 100%;
+    --primary-bg: #ff3337;
+    /* Primary background color */
+    --hover-bg: #ff33378f;
+    /* Hover effect for primary background */
+    --primary-text: #ff3337;
+    /* Primary text color */
+    --secondary-text: #414355;
+    /* Secondary text color */
+  }
+
+  /* Global Body Styles */
+  body {
+    @apply m-0 font-sans antialiased;
+    /* Set default margin to 0, sans-serif font, and anti-aliasing for better text rendering */
+  }
+}
+
+/* Typography */
+@layer components {
+
+  /* Headings and Text */
+  strong,
+  b {
+    @apply text-[54px] leading-[1.2] text-center text-[var(--primary-text)] my-5;
+    /* Bold text styling */
+  }
+
+  h1 {
+    @apply text-[54px] leading-[1.2] text-[var(--secondary-text)];
+    /* Main heading styling */
+  }
+
+  div,
+  p {
+    @apply text-[22px] text-[var(--secondary-text)] leading-[1.4];
+    /* General text styling for divs and paragraphs */
+  }
+
+  /* Primary Button */
+  .primary-btn {
+    @apply px-2 py-1 rounded-lg shadow-sm transition-all text-white;
+    /* Styling for the primary button */
+    background-color: var(--primary-bg);
+    /* Custom background color */
+  }
+
+  .primary-btn:hover {
+    background-color: var(--hover-bg);
+    /* Hover effect for the primary button */
+  }
+
+  /* Utility Class for Background Color */
+  .primary-color {
+    background-color: var(--primary-bg);
+    /* Custom primary background color utility */
+  }
+
+  /* Counter Styling */
+  .counter-container {
+    @apply flex items-center gap-2 justify-center;
+    /* Flex container for counter */
+  }
+
+  .counter-text {
+    @apply text-lg text-center flex;
+    /* Styling for the counter text */
+  }
+
+  .counter-number {
+    @apply text-lg ml-1 min-w-[30px] underline;
+    /* Styling for the number in counter */
+  }
+
+  .counter-button {
+    @apply px-3 py-2 text-sm rounded-lg cursor-pointer transition-all;
+    /* Styling for counter buttons */
+  }
+
+  /* Increment Button */
+  .increment {
+    @apply bg-gray-200 text-gray-800;
+    /* Styling for increment button */
+  }
+
+  .increment:hover {
+    @apply bg-gray-300;
+    /* Hover effect for increment button */
+  }
+
+  /* Decrement Button */
+  .decrement {
+    @apply bg-red-200 text-red-800;
+    /* Styling for decrement button */
+  }
+
+  .decrement:hover {
+    @apply bg-red-300;
+    /* Hover effect for decrement button */
+  }
+
+  /* Reset Button */
+  .reset {
+    @apply bg-[var(--primary-bg)] text-white;
+    /* Styling for reset button */
+  }
+
+  .reset:hover {
+    @apply bg-[var(--hover-bg)];
+    /* Hover effect for reset button */
+  }
+}
+
+/* Code Styling */
+code {
+  @apply font-mono;
+  /* Monospace font for code */
+}
+
+/* Toast Component Styles */
+.toast-container {
+  @apply flex items-center gap-2 p-[12px_20px_12px_16px] rounded-lg relative overflow-hidden;
+  background: radial-gradient(100% 382.15% at 6.14% 50%, rgba(116, 200, 152, 0.15) 0%, rgba(116, 200, 152, 0.03) 100%), #46474F;
+  /* Custom background gradient */
+}
+
+/* Half border effect (left side) */
+.toast-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px 0 0 9px;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(116, 200, 152, 0.3) 0%, rgba(116, 200, 152, 0) 0%);
+  z-index: 1;
+  border: 1px solid rgba(116, 200, 152, 0.9);
+  border-right: 0;
+  /* Gradient and border effect on the left side */
+}
+
+/* Toast icon styles */
+.toast-icon {
+  width: 24px;
+  height: 24px;
+  color: #74C898;
+  z-index: 2;
+  /* Icon inside the toast */
+}
+
+/* Toast content styles */
+.toast-content {
+  font-family: 'Inter', sans-serif;
+  z-index: 2;
+  /* Ensures content is above the gradient background */
+}
+
+/* Toast title styles */
+.toast-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 30px;
+  color: #FFFFFF;
+  /* Title style */
+}
+
+/* Toast description styles */
+.toast-description {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 30px;
+  color: #FFFFFF;
+  /* Description style */
+}
